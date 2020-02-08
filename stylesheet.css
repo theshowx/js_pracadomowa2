@@ -1,0 +1,57 @@
+body {
+    background-color: darkseagreen;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    background-color: aqua;
+    border: solid black;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-left: 50px;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: darkorange;
+    color: white;
+    border: solid black;
+}
+
+#menu {
+    float: left;
+    width: 15%;
+    min-height: 600px;
+    background-color: coral;
+    font-size: 20px;
+    border: solid black;
+    text-align: center;
+}
+
+#content {
+    min-height: 600px;
+    background-color: darkseagreen;
+    text-align: center;
+}
+
+#content img {
+    width: 500px;
+    height: 300px;
+    padding: 15px;
+}
+
+ul li:hover {
+    text-decoration: underline;
+    cursor: default;
+    color: gray;
+}
+
+

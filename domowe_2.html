@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Praca domowa 2</title>
+
+        <link rel="stylesheet" href="stylesheet.css">
+        <script src="jquery-3.4.1.min.js"></script>
+        <script src="jquery.validate.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <h1>Praca domowa 2</h1>
+        </header>
+
+        <div id="menu">
+            <ul>
+                <li onclick="notificate(1)">Pozycja 1</li>
+                <li onclick="notificate(2)">Pozycja 2</li>
+                <li onclick="notificate(3)">Pozycja 3</li>
+                <li onclick="notificate(4)">Pozycja 4</li>
+                <li onclick="notificate(5)">Pozycja 5</li>
+            </ul>
+            
+            <input placeholder="Podaj swoje imię" id="nameField">
+            <input type="button" value="Powitanie" id="button">
+        </div>
+
+        <div id="content">
+            <br>
+            <form action="javascript:swal('Poprawnie przesłano dane', 'Brawo, poradziłeś sobie!', 'success')" method="POST" name="form" id="form">
+                <div>
+                    <label for="name" class="label">Imię: </label>
+                    <input type="text" name="name" id="name" title="Podaj imię.">
+                </div>
+                <br>
+                <div>
+                    <label for="surname" class="label">Nazwisko: </label>
+                    <input type="text" name="surname" id="surname" title="Podaj nazwisko.">
+                </div>
+                <br>
+                <div>
+                    <label for="email" class="label">Adres e-mail: </label>
+                    <input type="email" name="email" id="email" title="Podaj adres e-mail.">
+                </div>
+                <br>
+                <div>
+                    <label for="lucky_digit" class="label">Szczęśliwa cyfra: </label>
+                    <input type="number" name="lucky_digit" id="lucky_digit" title="Podaj swoją szczęśliwą cyfrę.">
+                </div>
+                <br>
+                <div>
+                    <input type="submit" name="submit" id="submit" value="Wyślij">
+                </div>
+            </form>
+
+            <br><br>
+
+            <div id="schedule"></div>
+
+            <script>
+                var schedule = {
+                    "days" : [
+                        {
+                            "day" : "Poniedziałek",
+                            "_8am" : "Matematyka",
+                            "_9am" : "Plastyka",
+                            "_10am" : "WF"
+                        },
+                        {
+                            "day" : "Wtorek",
+                            "_8am" : "j. polski",
+                            "_9am" : "j. angielski",
+                            "_10am" : "Informatyka"
+                        },
+                        {
+                            "day" : "Środa",
+                            "_8am" : "Chemia",
+                            "_9am" : "Biologia",
+                            "_10am" : "Fizyka"
+                        },
+                        {
+                            "day" : "Czwartek",
+                            "_8am" : "Historia",
+                            "_9am" : "WOS",
+                            "_10am" : "Geografia"
+                        },
+                        {
+                            "day" : "Piątek",
+                            "_8am" : "Religia",
+                            "_9am" : "Technika",
+                            "_10am" : "Skakanie"
+                        }]
+                };
+
+                var output = "<table border=\"1px solid\" align=\"center\">";
+                var data = [4];
+
+                for(var i = 0; i < 4; i++)
+                    data[i] = "<tr>";
+                for(var i in schedule.days) {
+                    data[0] += "<th>" + schedule.days[i].day + "</th>";
+                    data[1] += "<td>" + schedule.days[i]._8am + "</td>";
+                    data[2] += "<td>" + schedule.days[i]._9am + "</td>";
+                    data[3] += "<td>" + schedule.days[i]._10am + "</td>";
+                }
+                for(var i = 0; i < 4; i++) {
+                    data[i] += "</tr>";
+                    output += data[i];
+                }
+
+                output += "</table>";
+
+                document.getElementById("schedule").innerHTML = output;
+            </script>
+
+            <p>
+                <button id="button1">Guzik</button>
+                <button id="button2">Guzik</button>
+                <button id="button3">Guzik</button>
+            </p>
+        </div>
+        
+        <footer>
+            <h1>Stopka</h1>
+        </footer>
+    </body>
+</html>
